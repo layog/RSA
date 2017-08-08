@@ -112,11 +112,11 @@ def generateRandomPrime(bits):
     return num
 
 
-def RSA():
-    p = generateRandomPrime(512)
+def generate(bits=512):
+    p = generateRandomPrime(bits/2)
     q = p
     while q == p:
-        q = generateRandomPrime(512)
+        q = generateRandomPrime(bits/2)
     n = p*q
     phi = (p-1) * (q-1)
     e = random.randint(1, 50000)
@@ -134,6 +134,9 @@ def RSA():
 
 
 def encrypt(keys, text):
+    """
+    :param
+    """
     key, n = keys
     result = [pow(ord(c), key, n) for c in text]
     return result
@@ -152,6 +155,6 @@ def decrypt(keys, text):
 
 
 if __name__ == "__main__":
-    key_pair = RSA()
+    key_pair = generate(512)
     print "Public key is: ", key_pair["public"]
     print "Private key is: ", key_pair["private"]
