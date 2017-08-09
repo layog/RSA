@@ -31,6 +31,7 @@ Run `test_RSA.py` and it will print
 * the text before encryption
 
 * the ciphertext after encryption
+
 * the original text after decryption (if successful)
 
 > Change the `text` parameter in `test_RSA.py` to change the text to be tested
